@@ -37,54 +37,78 @@ Data yang akan digunakan dalam proyek ini adalah dataset Bank Data - Churn Class
 - Exited: Status keluarnya nasabah
 
 Dilakukan proses *Exploratory Data Analysis* (EDA) untuk menghilangkan outliers dan hubungan antar kolom.
+
 1. *Churn*
+
 ![Persentase *Churn*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/churn.png)
+
 Dapat dilihat dari diagram pie diatas churn rate pada data bank ini ada sebesar 20% atau sebanyak 2037 nasabah dari total 10000 nasabah.
 
 2. *Credit Score*
-![Distribusi *Churn* berdasarkan *Credit Score*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_CreditScore.png)
-Dari distplot diatas dapat dilihat bahwa *credit score* tidak menentukan nasabah keluar atau tidak.
 
+![Distribusi *Churn* berdasarkan *Credit Score*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_CreditScore.png)
+
+Dari distplot diatas dapat dilihat bahwa *credit score* tidak menentukan nasabah keluar atau tidak.
 ![*Outliers* pada kolom *CreditScore*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/outliers_CreditScore.png)
+
 Pada data *Credit Score* terdapat *outliers* dibawah quantile 1, hal ini nanti akan diperbaiki pada saat melakukan *scaling* menggunakan robust scaler. Robust scaler digunakan untuk melakukan *scaling* data yang distribusinya bukan distribusi normal, serta belum dilakukan *outliers handling*.
 
 3. *Age*
+
 ![Distribusi *Churn* berdasarkan umur](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Age.png)
+
 Dari data diatas dapat dilihat bahwa nasabah yang banyak keluar adalah nasabah yang memiliki berumur diantara 40 - 50 tahun.
 
 ![*Outliers* pada kolom *Age*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/outliers_Age.png)
+
 Pada data *Age* terdapat *outliers* dibawah quantile 1, hal ini nanti akan diperbaiki pada saat melakukan *scaling* menggunakan robust scaler. Robust scaler digunakan untuk melakukan *scaling* data yang distribusinya bukan distribusi normal, serta belum dilakukan *outliers handling*.
 
 4. *Tenure*
+
 ![Distribusi *Churn* berdasarkan *Tenure*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Tenure.png)
+
 Dari distplot diatas dapat dilihat bahwa *Tenure* tidak menentukan nasabah keluar atau tidak.
 
 5. *Balance*
+
 ![Distribusi *Churn* berdasarkan *Balance*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Balance.png)
+
 *Chart* tersebut menunjukan nasabah yang banyak keluar adalah nasabah yang memiliki *Balance* sekitar 100000 - 150000, sedangkan yang banyak keluar adalah nasabah yang memiliki *Balance* sebesar 0.
 
 5. *Number of Products*
+
 ![Distribusi *Churn* berdasarkan *NumOfProducts*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_NumOfProducts.png)
+
 Plot diatas dapat disimpulkan bahwa jika nasabah memiliki jenis produk 1, 3, dan 4 kemungkinan besar akan keluar, sedangkan nasabah yang memilih jenis produk 2 hanya memiliki kemungkinan kecil untuk keluar.
 
 6. *Has Credit Card*
+
 ![Distribusi *Churn* berdasarkan *HasCrCard*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_HasCrCard.png)
+
 Nasabah yang memiliki ataupun tidak memiliki kartu kredit tidak mempengaruhi seorang nasabah keluar.
 
 6. *Is Active Member*
+
 ![Distribusi *Churn* berdasarkan *IsActiveMember*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_IsActiveMember.png)
+
 Nasabah yang aktif memiliki kemungkinan lebih kecil untuk keluar.
 
 6. *Estimated Salary*
+
 ![Distribusi *Churn* berdasarkan *IsActiveMember*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_EstimatedSalary.png)
+
 Estimasi pendapatan nasabah tidak mempengaruhi nasabah tersebut keluar atau tidak.
 
 7. *Geography*
+
 ![Distribusi *Churn* berdasarkan *Geography*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Geography.png)
+
 Nasabah yang berasal dari Prancis adalah nasabah dengan tingkat keluar paling tinggi sebesar 42%, sedangkan tingkat keluar yang paling tinggi adalah nasabah yang berasal dari Jerman dan Prancis sebesar 0.81%.
 
 8. *Gender*
+
 ![Distribusi *Churn* berdasarkan *Gender*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Gender.png)
+
 Nasabah laki-laki lebih banyak yang tidak keluar dibandingkan dengan nasabah perempuan.
 
 Dari data diatas dapat disimpulkan bahwa
@@ -120,10 +144,15 @@ Evaluasi yang dipakai untuk melihat error model yang telah dibuat adalah menggun
 ![](https://pbs.twimg.com/media/Etuc3lBXcAEH7wO.png)
 
 MSE	= mean squared error
+
 n	= jumlah dataset
+
 Yi	= nilai sebenarnya
+
 Ŷi	= nilai prediksi
 
 ## Kesimpulan
+
 ![](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/result.png)
+
 Didapatkan kesimpulan dari proyek predictive analysis ini, yaitu berdasarkan prediksi *Churn* nasabah bank dengan menggunakan tiga model regresi Machine Learning, yaitu K-Neighbors Regressor, Random Forest, dan AdaBoost, yaitu algortima AdaBoosting adalah algoritma yang paling baik dalam memprediksi *Churn* dibandingkan dua algoritma lainnya. Hal ini dapat dilihat pada diagram diatas, dimana akurasi prediksi data *train* dan *test* memiliki akurasi yang tinggi, dan perbedaan antara kedua akurasi tersebut tidak terlalu besar.
