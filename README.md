@@ -14,7 +14,7 @@ Bank dapat beroperasi ketika mereka memiliki nasabah yang menggunakan jasa merek
 
 ### Goals
 - Mengetahui model yang terbaik untuk melakukan prediksi nasabah akan berlatih ke bank lain atau tidak.
-- 
+
 ### Solution Statements
 - Melakukan Exploratory Data Analysis untuk melihat korelasi antar fitur dan hubungannya dengan tingkat *Churn*
 - Menggunakan model *Machine Learning* yang sesuai dengan tujuan dan dataset yang digunakan, yaitu model regresi. Beberapa model regresi yang dapat digunakan adalah *K-Neighbors Regressor*, *Random Forest Regressor*, dan *AdaBoost Regresor*.
@@ -40,74 +40,74 @@ Dilakukan proses *Exploratory Data Analysis* (EDA) untuk menghilangkan outliers 
 
 1. *Churn*
 
-![Persentase *Churn*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/churn.png)
+![Persentase *Churn*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/churn.png?raw=true)
 
 Dapat dilihat dari diagram pie diatas churn rate pada data bank ini ada sebesar 20% atau sebanyak 2037 nasabah dari total 10000 nasabah.
 
 2. *Credit Score*
 
-![Distribusi *Churn* berdasarkan *Credit Score*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_CreditScore.png)
+![Distribusi *Churn* berdasarkan *Credit Score*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_CreditScore.png?raw=true)
 
 Dari distplot diatas dapat dilihat bahwa *credit score* tidak menentukan nasabah keluar atau tidak.
-![*Outliers* pada kolom *CreditScore*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/outliers_CreditScore.png)
+![*Outliers* pada kolom *CreditScore*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/outliers_CreditScore.png?raw=true)
 
 Pada data *Credit Score* terdapat *outliers* dibawah quantile 1, hal ini nanti akan diperbaiki pada saat melakukan *scaling* menggunakan robust scaler. Robust scaler digunakan untuk melakukan *scaling* data yang distribusinya bukan distribusi normal, serta belum dilakukan *outliers handling*.
 
 3. *Age*
 
-![Distribusi *Churn* berdasarkan umur](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Age.png)
+![Distribusi *Churn* berdasarkan umur](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Age.png?raw=true)
 
 Dari data diatas dapat dilihat bahwa nasabah yang banyak keluar adalah nasabah yang memiliki berumur diantara 40 - 50 tahun.
 
-![*Outliers* pada kolom *Age*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/outliers_Age.png)
+![*Outliers* pada kolom *Age*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/outliers_Age.png?raw=true)
 
 Pada data *Age* terdapat *outliers* dibawah quantile 1, hal ini nanti akan diperbaiki pada saat melakukan *scaling* menggunakan robust scaler. Robust scaler digunakan untuk melakukan *scaling* data yang distribusinya bukan distribusi normal, serta belum dilakukan *outliers handling*.
 
 4. *Tenure*
 
-![Distribusi *Churn* berdasarkan *Tenure*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Tenure.png)
+![Distribusi *Churn* berdasarkan *Tenure*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Tenure.png?raw=true)
 
 Dari distplot diatas dapat dilihat bahwa *Tenure* tidak menentukan nasabah keluar atau tidak.
 
 5. *Balance*
 
-![Distribusi *Churn* berdasarkan *Balance*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Balance.png)
+![Distribusi *Churn* berdasarkan *Balance*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Balance.png?raw=true)
 
 *Chart* tersebut menunjukan nasabah yang banyak keluar adalah nasabah yang memiliki *Balance* sekitar 100000 - 150000, sedangkan yang banyak keluar adalah nasabah yang memiliki *Balance* sebesar 0.
 
 5. *Number of Products*
 
-![Distribusi *Churn* berdasarkan *NumOfProducts*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_NumOfProducts.png)
+![Distribusi *Churn* berdasarkan *NumOfProducts*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_NumOfProducts.png?raw=true)
 
 Plot diatas dapat disimpulkan bahwa jika nasabah memiliki jenis produk 1, 3, dan 4 kemungkinan besar akan keluar, sedangkan nasabah yang memilih jenis produk 2 hanya memiliki kemungkinan kecil untuk keluar.
 
 6. *Has Credit Card*
 
-![Distribusi *Churn* berdasarkan *HasCrCard*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_HasCrCard.png)
+![Distribusi *Churn* berdasarkan *HasCrCard*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_HasCrCard.png?raw=true)
 
 Nasabah yang memiliki ataupun tidak memiliki kartu kredit tidak mempengaruhi seorang nasabah keluar.
 
 6. *Is Active Member*
 
-![Distribusi *Churn* berdasarkan *IsActiveMember*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_IsActiveMember.png)
+![Distribusi *Churn* berdasarkan *IsActiveMember*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_IsActiveMember.png?raw=true)
 
 Nasabah yang aktif memiliki kemungkinan lebih kecil untuk keluar.
 
 6. *Estimated Salary*
 
-![Distribusi *Churn* berdasarkan *IsActiveMember*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_EstimatedSalary.png)
+![Distribusi *Churn* berdasarkan *IsActiveMember*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_EstimatedSalary.png?raw=true)
 
 Estimasi pendapatan nasabah tidak mempengaruhi nasabah tersebut keluar atau tidak.
 
 7. *Geography*
 
-![Distribusi *Churn* berdasarkan *Geography*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Geography.png)
+![Distribusi *Churn* berdasarkan *Geography*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Geography.png?raw=true)
 
 Nasabah yang berasal dari Prancis adalah nasabah dengan tingkat keluar paling tinggi sebesar 42%, sedangkan tingkat keluar yang paling tinggi adalah nasabah yang berasal dari Jerman dan Prancis sebesar 0.81%.
 
 8. *Gender*
 
-![Distribusi *Churn* berdasarkan *Gender*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Gender.png)
+![Distribusi *Churn* berdasarkan *Gender*](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/distribusi_Gender.png?raw=true)
 
 Nasabah laki-laki lebih banyak yang tidak keluar dibandingkan dengan nasabah perempuan.
 
@@ -129,12 +129,9 @@ Dari data diatas dapat disimpulkan bahwa
 
 ## Modeling
 Pada tahap ini, akan digunakan beberapa algoritma regresi yang akan membantu dalam pembuatan model, yaitu
-- *K-Neightbor Regressor* adalah algoritma *supervised learning*, dimana hasil dari instance yang baru diklasifikasikan berdasarkan dari kategori k-tetangga terdekat.
-Algoritma yang berasal dari algoritma *K-Nearest Neighbors*. Algoritma ini baik dalam memproses data yang non-linear, namun kurang baik dalam memproses data yang memiliki null values atau outliers. Algoritma ini memiliki tujuan untuk melakukan klasifikasi obyek baru berdasarkan sampel dan atribut dari data *train*.
-
-- *Random Forest* merupakan kombinasi dari masing-masing tree yang baik, selanjutnya akan dikombinasikan dalam satu model. Algoritma ini akan bergantung kepada sebuah nilai vektor random dengan distribusi tree yang sama pada masing-masing *decision tree*.
-
-- *AdaBoost* adalah model boosting yang dikembangkan paling awal, dimana model ini akan menyesuaikan dan mencoba untuk menoreksi secara mandiri di setiap iterasi proses boosing. Pada iterasi pertama, AdaBoost akan memberikan bobot yang sama untuk setiap data, lalu secara otomatis akan memberikan bobot titik data setelah setiap pohon keputusan.
+- *K-Neightbor Regressor* adalah algoritma yang berasal dari algoritma *K-Nearest Neighbors*. Algoritma ini baik dalam memproses data yang non-linear, namun kurang baik dalam memproses data yang memiliki null values atau outliers. 
+- *Random Forest* adalah algoritma yang berasal dari *decision tree*, dimana algoritma ini populer karena memiliki stabilitas yang baik.
+- *AdaBoost* adalah algoritma yang memberikan bobot lebih pada observasi yang tidak tepat.
 
 Berikutnya adalah tahapan yang dilakukan untuk membuat pemodelan machine learning, yaitu dibuat dataframe yang berisikan hasil perhitungan MSE pada setiap algoritma yang dipakai, untuk parameter setiap algortma akan dijelaskan dibawah ini.
 1. KNeighborsRegressor, menggunakan 10 data neighbors terdekat sebagai data pembanding.
@@ -154,12 +151,6 @@ Yi	= nilai sebenarnya
 
 Ŷi	= nilai prediksi
 
-MSE pada setiap model tergolong kecil, model yang memiliki error paling kecil adalah model random forest (train: 0.000098, test: 0.000135). Namun, ketika dibandingkan dengan tingkat akurasi random forest lebih jelek dibandingkan kedua model lainnya. Sehingga dapat dikatakan jika model random forest masih belum cukup baik untuk dipakai dalam melakukan prediksi. Sedangkan model yang memiliki akurasi paling baik adalah model AdaBoosting dengan tingkat error sebesar 0.000134 pada data *train* dan 	0.000137 pada data *test*
-
-Hasil prediksi yang diberikan pada ketiga model tersebut adalah sama, dimana ketika data aslinya adalah nasabah tidak melakukan *Churn* (0), dan hasil prediksi dari ketiga model tersebut adalah 0.1, dapat dibulatkan kebawah menjadi 0. Sehingga dapat dikatakan ketiga model tersebut dapat memprediksi dengan benar.
-
 ## Kesimpulan
-
-![](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/result.png)
-
+!["Hasil"](https://github.com/AudricLysander/Bank-Churn-Prediction/blob/main/result.png?raw=true)
 Didapatkan kesimpulan dari proyek predictive analysis ini, yaitu berdasarkan prediksi *Churn* nasabah bank dengan menggunakan tiga model regresi Machine Learning, yaitu K-Neighbors Regressor, Random Forest, dan AdaBoost, yaitu algortima AdaBoosting adalah algoritma yang paling baik dalam memprediksi *Churn* dibandingkan dua algoritma lainnya. Hal ini dapat dilihat pada diagram diatas, dimana akurasi prediksi data *train* dan *test* memiliki akurasi yang tinggi, dan perbedaan antara kedua akurasi tersebut tidak terlalu besar.
