@@ -129,9 +129,12 @@ Dari data diatas dapat disimpulkan bahwa
 
 ## Modeling
 Pada tahap ini, akan digunakan beberapa algoritma regresi yang akan membantu dalam pembuatan model, yaitu
-- *K-Neightbor Regressor* adalah algoritma yang berasal dari algoritma *K-Nearest Neighbors*. Algoritma ini baik dalam memproses data yang non-linear, namun kurang baik dalam memproses data yang memiliki null values atau outliers. 
-- *Random Forest* adalah algoritma yang berasal dari *decision tree*, dimana algoritma ini populer karena memiliki stabilitas yang baik.
-- *AdaBoost* adalah algoritma yang memberikan bobot lebih pada observasi yang tidak tepat.
+- *K-Neightbor Regressor* adalah algoritma *supervised learning*, dimana hasil dari instance yang baru diklasifikasikan berdasarkan dari kategori k-tetangga terdekat.
+Algoritma yang berasal dari algoritma *K-Nearest Neighbors*. Algoritma ini baik dalam memproses data yang non-linear, namun kurang baik dalam memproses data yang memiliki null values atau outliers. Algoritma ini memiliki tujuan untuk melakukan klasifikasi obyek baru berdasarkan sampel dan atribut dari data *train*.
+
+- *Random Forest* merupakan kombinasi dari masing-masing tree yang baik, selanjutnya akan dikombinasikan dalam satu model. Algoritma ini akan bergantung kepada sebuah nilai vektor random dengan distribusi tree yang sama pada masing-masing *decision tree*.
+
+- *AdaBoost* adalah model boosting yang dikembangkan paling awal, dimana model ini akan menyesuaikan dan mencoba untuk menoreksi secara mandiri di setiap iterasi proses boosing. Pada iterasi pertama, AdaBoost akan memberikan bobot yang sama untuk setiap data, lalu secara otomatis akan memberikan bobot titik data setelah setiap pohon keputusan.
 
 Berikutnya adalah tahapan yang dilakukan untuk membuat pemodelan machine learning, yaitu dibuat dataframe yang berisikan hasil perhitungan MSE pada setiap algoritma yang dipakai, untuk parameter setiap algortma akan dijelaskan dibawah ini.
 1. KNeighborsRegressor, menggunakan 10 data neighbors terdekat sebagai data pembanding.
@@ -150,6 +153,10 @@ n	= jumlah dataset
 Yi	= nilai sebenarnya
 
 Ŷi	= nilai prediksi
+
+MSE pada setiap model tergolong kecil, model yang memiliki error paling kecil adalah model random forest (train: 0.000098, test: 0.000135). Namun, ketika dibandingkan dengan tingkat akurasi random forest lebih jelek dibandingkan kedua model lainnya. Sehingga dapat dikatakan jika model random forest masih belum cukup baik untuk dipakai dalam melakukan prediksi. Sedangkan model yang memiliki akurasi paling baik adalah model AdaBoosting dengan tingkat error sebesar 0.000134 pada data *train* dan 	0.000137 pada data *test*
+
+Hasil prediksi yang diberikan pada ketiga model tersebut adalah sama, dimana ketika data aslinya adalah nasabah tidak melakukan *Churn* (0), dan hasil prediksi dari ketiga model tersebut adalah 0.1, dapat dibulatkan kebawah menjadi 0. Sehingga dapat dikatakan ketiga model tersebut dapat memprediksi dengan benar.
 
 ## Kesimpulan
 
